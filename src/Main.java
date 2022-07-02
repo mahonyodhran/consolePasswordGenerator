@@ -3,6 +3,10 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        User user = new User("john", 0000);
+        System.out.println("Welcome back " + user.getUsername() + "!");
+        System.out.println("Please enter your pin to continue: ");
+
         int passwordLength = getPasswordLength();
         String password = generatePassword(passwordLength);
         System.out.println(password);
