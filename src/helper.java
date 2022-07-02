@@ -44,11 +44,11 @@ public class helper {
     }
 
     static String generatePassword(int passwordLength) {
-        String LOWER = "abcdefghijklmnopqrstuvwxyz";
-        String UPPER = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        String DIGITS = "0123456789";
-        String PUNCTUATION = "!@#$%&*()_+-=[]|,./?><";
-        String all = LOWER + UPPER + DIGITS + PUNCTUATION;
+        final String LOWER = "abcdefghijklmnopqrstuvwxyz";
+        final String UPPER = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        final String DIGITS = "0123456789";
+        final String PUNCTUATION = "!@#$%&*()_+-=[]|,./?><";
+        final String all = LOWER + UPPER + DIGITS + PUNCTUATION;
 
         String password = "";
         Random r = new Random();
