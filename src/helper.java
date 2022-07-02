@@ -87,4 +87,42 @@ public class helper {
             return false;
         }
     }
+
+    static boolean wantReadFile() {
+        System.out.println("Would you like to view saved passwords: ");
+        System.out.print("Enter 'Y' or 'y' otherwise program will exit : ");
+
+        String answer = input.nextLine();
+        if (answer.length() == 0) {
+            answer = "No";
+        }
+        if (answer.charAt(0) == 'Y' || answer.charAt(0) == 'y') {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    static String readFile() {
+        try (BufferedReader br = new BufferedReader(new FileReader("passwords.txt"))) {
+            try {
+                StringBuilder sb = new StringBuilder();
+                String line = br.readLine();
+
+                while (line != null) {
+                    sb.append(line);
+                    sb.append(System.lineSeparator());
+                    line = br.readLine();
+                }
+                String everything = sb.toString();
+
+                return everything;
+            } finally {
+                br.close();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return "Error: File Empty or Not Found";
+    }
 }
