@@ -7,10 +7,11 @@
 
 ### In Progress
 
-- [ ] Add to file rather than overwrite  
+- [ ] Extract methods with duplicate logic  
 
 ### Done ✓
 
+- [x] Add to file rather than overwrite  
 - [x] Ask if you want to save which adds to txt file {"site" : "password"}  
 - [x] Ask what password is for  
 - [x] Pin on start to access  
