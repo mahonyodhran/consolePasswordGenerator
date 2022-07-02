@@ -72,4 +72,19 @@ public class helper {
         }
         System.out.println("Your password for " + passwordPair + " is " + password);
     }
+
+    static boolean savePassword() {
+        System.out.println("Would you like to save this password: ");
+        System.out.print("Enter 'Y' or 'y' otherwise program will exit : ");
+
+        String answer = input.nextLine();
+        if (answer.length() == 0) {
+            answer = "No";
+        }
+        if (answer.charAt(0) == 'Y' || answer.charAt(0) == 'y') {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
