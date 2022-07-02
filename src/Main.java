@@ -1,6 +1,8 @@
 import java.util.Random;
 import java.util.Scanner;
 
+import org.omg.CORBA.PUBLIC_MEMBER;
+
 public class Main {
     public static void main(String[] args) {
         int passwordLength = getPasswordLength();
@@ -26,10 +28,16 @@ public class Main {
     }
 
     static String generatePassword(int passwordLength) {
+        String LOWER = "abcdefghijklmnopqrstuvwxyz";
+        String UPPER = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        String DIGITS = "0123456789";
+        String PUNCTUATION = "!@#$%&*()_+-=[]|,./?><";
+        String all = LOWER + UPPER + DIGITS + PUNCTUATION;
+
         String password = "";
         Random r = new Random();
         for (int i = 0; i < passwordLength; i++) {
-            password += (char) (r.nextInt(26) + 'a');
+            password += (char) all.charAt(r.nextInt(all.length()));
         }
         return password;
     }
