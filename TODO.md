@@ -1,20 +1,14 @@
-# Project
-
-Project Description
-
-<em>[TODO.md spec & Kanban Board](https://bit.ly/3fCwKfM)</em>
+# Java Console Password Generator
 
 ### Todo
 
-- [ ] Ask if you want to save which adds to txt file {"site" : "password"}  
-- [ ] Ask what password is for  
-- [ ] Pin on start to access  
-- [ ] Ask how long the password needs to be  
+- [ ] Ask if you want to save which adds to txt file {"site" : "password"}
+- [ ] Ask what password is for
+- [ ] Pin on start to access
+- [ ] Ask how long the password needs to be
 
 ### In Progress
 
-- [ ] Come up with password convention  
+- [ ] Come up with password convention
 
 ### Done ✓
-
-
