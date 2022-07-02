@@ -69,7 +69,7 @@ public class Main {
     }
 
     static void saveToFile(String password, String passwordPair) {
-        try (BufferedWriter out = new BufferedWriter(new FileWriter("test.txt"))) {
+        try (BufferedWriter out = new BufferedWriter(new FileWriter("passwords.txt"))) {
             try {
                 out.write(passwordPair + " : " + password);
             } catch (IOException e) {
