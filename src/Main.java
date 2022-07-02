@@ -2,30 +2,47 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
-        User user = new User("john", 0000);
-        System.out.println("Welcome back " + user.getUsername() + "!");
-        System.out.println("Please enter your pin to continue: ");
 
+    private static User user = new User("john", 0000);
+    static Scanner input = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        System.out.println("Welcome back " + user.getUsername() + "!");
+        pinCheck();
         int passwordLength = getPasswordLength();
         String password = generatePassword(passwordLength);
         System.out.println(password);
     }
 
+    static boolean pinCheck() {
+        int answer = 0;
+
+        do {
+            System.out.print("Please enter your pin to continue: ");
+            while (!input.hasNextInt()) {
+                System.out.print("Incorrect! Please enter your pin to continue: ");
+                input.next();
+            }
+            answer = input.nextInt();
+        } while (answer != user.getPin());
+
+        input.nextLine();
+        return true;
+    }
+
     static int getPasswordLength() {
-        Scanner input = new Scanner(System.in);
         int length = 0;
 
         do {
             System.out.print("How long would you like your password: ");
             while (!input.hasNextInt()) {
-                System.out.println("Please enter a value greater than 5");
+                System.out.print("Please enter a value greater than 5: ");
                 input.next();
             }
             length = input.nextInt();
         } while (length <= 6);
 
-        input.close();
+        input.nextLine();
         return length;
     }
 
