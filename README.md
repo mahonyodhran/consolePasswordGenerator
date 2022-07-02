@@ -6,6 +6,6 @@ Asks for pin to 'validate' the user
 
 Asks how long desiered password will be
 
-Asks what site it is for (Will adjust this an optional flow)
+Asks what site it is for
 
-Saves the contents to a .txt file (Same as above)
+Saves the contents to a .txt file
