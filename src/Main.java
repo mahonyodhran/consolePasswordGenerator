@@ -3,7 +3,14 @@ public class Main {
         helper.pinCheck();
         int passwordLength = helper.getPasswordLength();
         String password = helper.generatePassword(passwordLength);
-        String passwordPair = helper.getPasswordPair();
-        helper.saveToFile(password, passwordPair);
+        // set up separate flow to ask if you want to save it
+        boolean save = helper.savePassword();
+
+        if (save) {
+            String passwordPair = helper.getPasswordPair();
+            helper.saveToFile(password, passwordPair);
+        } else {
+            System.out.println("Your password is: " + password);
+        }
     }
 }
