@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
@@ -26,8 +27,9 @@ public class Main {
 
     static String generatePassword(int passwordLength) {
         String password = "";
+        Random r = new Random();
         for (int i = 0; i < passwordLength; i++) {
-            password += i;
+            password += (char) (r.nextInt(26) + 'a');
         }
         return password;
     }
