@@ -2,6 +2,8 @@
 
 ### Todo
 
+- [ ] Maybe: Create Scanner class rather than global  
+- [ ] Maybe: Create Singleton in User class rather than global variable  
 - [ ] Ask if you want to save which adds to txt file {"site" : "password"}  
 - [ ] Ask what password is for  
 
