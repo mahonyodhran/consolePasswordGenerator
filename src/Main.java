@@ -1,5 +1,6 @@
 import java.util.Random;
 import java.util.Scanner;
+import java.io.*;
 
 public class Main {
 
@@ -12,8 +13,7 @@ public class Main {
         int passwordLength = getPasswordLength();
         String password = generatePassword(passwordLength);
         String passwordPair = getPasswordPair();
-
-        System.out.println("Your password for " + passwordPair + " is " + password);
+        saveToFile(password, passwordPair);
     }
 
     static String getPasswordPair() {
@@ -66,5 +66,20 @@ public class Main {
             password += (char) all.charAt(r.nextInt(all.length()));
         }
         return password;
+    }
+
+    static void saveToFile(String password, String passwordPair) {
+        try (BufferedWriter out = new BufferedWriter(new FileWriter("test.txt"))) {
+            try {
+                out.write(passwordPair + " : " + password);
+            } catch (IOException e) {
+                System.out.println("Exception ");
+            } finally {
+                out.close();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println("Your password for " + passwordPair + " is " + password);
     }
 }
