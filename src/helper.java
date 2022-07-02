@@ -59,9 +59,9 @@ public class helper {
     }
 
     static void saveToFile(String password, String passwordPair) {
-        try (BufferedWriter out = new BufferedWriter(new FileWriter("passwords.txt"))) {
+        try (BufferedWriter out = new BufferedWriter(new FileWriter("passwords.txt", true))) {
             try {
-                out.write(passwordPair + " : " + password);
+                out.write(passwordPair + " : " + password + '\n');
             } catch (IOException e) {
                 System.out.println("Exception ");
             } finally {
