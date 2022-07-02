@@ -11,7 +11,14 @@ public class Main {
         pinCheck();
         int passwordLength = getPasswordLength();
         String password = generatePassword(passwordLength);
-        System.out.println(password);
+        String passwordPair = getPasswordPair();
+
+        System.out.println("Your password for " + passwordPair + " is " + password);
+    }
+
+    static String getPasswordPair() {
+        System.out.print("What is the password for: ");
+        return input.nextLine();
     }
 
     static boolean pinCheck() {
@@ -36,11 +43,11 @@ public class Main {
         do {
             System.out.print("How long would you like your password: ");
             while (!input.hasNextInt()) {
-                System.out.print("Please enter a value greater than 5: ");
+                System.out.print("Please enter a value greater than 10: ");
                 input.next();
             }
             length = input.nextInt();
-        } while (length <= 6);
+        } while (length <= 9);
 
         input.nextLine();
         return length;
